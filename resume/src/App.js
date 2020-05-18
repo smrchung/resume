@@ -6,9 +6,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Home from './Pages/Home'
-// import About from './Pages/About'
-// import Work from './Pages/Work'
-// import Projects from './Pages/Projects'
+import About from './Pages/About'
+import Work from './Pages/Work'
+import Projects from './Pages/Projects'
 import grey from '@material-ui/core/colors/grey';
 import teal from '@material-ui/core/colors/teal';
 import blueGrey from '@material-ui/core/colors/blueGrey';
@@ -51,6 +51,10 @@ const styles = () => ({
   disclaimerText: {
     backgroundColor: grey[800],
     color: "#FFFFFF",
+  },
+  resume: {
+    color: "#FFFFFF",
+    textDecoration: 'none'
   }
 });
 
@@ -79,22 +83,22 @@ class App extends React.Component {
         scrollToComponent(this.Home, { offset: 0, align: 'top'})
         this.setState({color: blueGrey[800]});
         break;
-      // case 1:
-      //   scrollToComponent(this.About, { offset: 0, align: 'top'})
-      //   this.setState({color: grey[800]});
-      //   break;
-      // case 2:
-      //   scrollToComponent(this.Work, { offset: 0, align: 'top'})
-      //   this.setState({color: teal[200]});
-      //   break;
-      // case 3:
-      //   scrollToComponent(this.Projects, { offset: 0, align: 'top'})
-      //   this.setState({color: blueGrey[300]});
-      //   break;
-      // default:
-      //   scrollToComponent(this.Home, { offset: 0, align: 'top'})
-      //     this.setState({color: blueGrey[800]});
-      //     break;
+      case 1:
+        scrollToComponent(this.About, { offset: 10, align: 'top'})
+        // scrollToComponent(document.getElementById('About'));
+        this.setState({color: grey[800]});
+        break;
+      case 2:
+        scrollToComponent(this.Work, { offset: 10, align: 'top'})
+        this.setState({color: grey[900]});
+        break;
+      case 3:
+        scrollToComponent(this.Projects, { offset: 10, align: 'top'})
+        this.setState({color: grey[800]});
+        break;
+      default:
+        scrollToComponent(this.Home, { offset: 0, align: 'top'})
+        break;
     }
   }
 
@@ -103,23 +107,28 @@ class App extends React.Component {
     var spot = window.pageYOffset;
     var window_height = window.innerHeight;
 
+    var homeHeight = document.getElementById('Home').clientHeight;
+    var aboutHeight = document.getElementById('About').clientHeight;
+    var workHeight = document.getElementById('Work').clientHeight;
+    var projectHeight = document.getElementById('Projects').clientHeight;
+
     //home page
-    if(spot >= 0 && spot <= window_height) {
+    if(spot >= 0 && spot <= homeHeight) {
       this.handleChange(0);
       this.setState({color: blueGrey[800]});
     } //about page
-    // else if(spot > window_height && spot < window_height * 2) {
-    //   this.handleChange(2);
-    //   this.setState({color: grey[800]});
-    // } //work experience page
-    // else if(spot >= window_height * 2 && spot < (window_height * 3 + 650)) {
-    //   this.handleChange(3);
-    //   this.setState({color: grey[900]});
-    // } //projects page
-    // else {
-    //   this.handleChange(4);
-    //   this.setState({color: grey[800]});
-    // }
+    else if(spot > homeHeight - 50 && spot <= (homeHeight + aboutHeight)) {
+      this.handleChange(1);
+      this.setState({color: grey[800]});
+    } //work experience page
+    else if(spot > (homeHeight + aboutHeight) && spot <= (homeHeight + aboutHeight + workHeight)) {
+      this.handleChange(2);
+      this.setState({color: grey[900]});
+    } //projects page
+    else {
+      this.handleChange(3);
+      this.setState({color: grey[800]});
+    }
   }
 
   render() {
@@ -139,18 +148,24 @@ class App extends React.Component {
               fixed
             >
               <Tab label="HOME" onClick={() => this.handleTabClick(0)}/>
-              {/* <Tab label="ABOUT" onClick={() => this.handleTabClick(1)}/>
+              <Tab label="ABOUT" onClick={() => this.handleTabClick(1)}/>
               <Tab label="WORK EXPERIENCE" onClick={() => this.handleTabClick(2)}/>
-              <Tab label="PROJECTS" onClick={() => this.handleTabClick(3)}/> */}
+              <Tab label="PROJECTS" onClick={() => this.handleTabClick(3)}/>
+              <a href="https://drive.google.com/open?id=1WsR_oAgSxtMV16U_wS1eeeVJqmONvLXF" className={classes.resume} target="_blank"><Tab label="Download Résumé"/></a>
             </Tabs>
           </MuiThemeProvider>
         </AppBar>
-        <section><Home className='home' ref={(section) => { this.Home = section; }} theme={theme}/></section>
-        {/* <section><About className='about' ref={(section) => { this.About = section; }} theme={theme}/></section>
-        <section><Work className='work' ref={(section) => { this.Work = section; }} theme={theme}/></section>
-        <section><Projects className='project' ref={(section) => { this.Projects = section; }} theme={theme}/></section> */}
-        <div className={classes.dislaimer}>
-          <Typography color={"primary"} variant="body2" gutterBottom align='center' className={classes.disclaimerText}>SEMIRA CHUNG <a href="https://github.com/smrchung/main">©</a> 2020</Typography>
+        <div id="Home">
+          <section><Home className='home' ref={(section) => { this.Home = section; }} theme={theme}/></section>
+        </div>
+        <div id="About">
+          <section><About className='about' ref={(section) => { this.About = section; }} theme={theme}/></section>
+        </div>
+        <div id="Work">
+          <section><Work className='work' ref={(section) => { this.Work = section; }} theme={theme}/></section>
+        </div>
+        <div id="Projects">
+          <section><Projects className='project' ref={(section) => { this.Projects = section; }} theme={theme}/></section>
         </div>
       </div>
     );
