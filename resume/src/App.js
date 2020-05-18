@@ -113,7 +113,7 @@ class App extends React.Component {
     var projectHeight = document.getElementById('Projects').clientHeight;
 
     //home page
-    if(spot >= 0 && spot <= homeHeight) {
+    if(spot >= -100 && spot <= homeHeight) {
       this.handleChange(0);
       this.setState({color: blueGrey[800]});
     } //about page
@@ -125,8 +125,11 @@ class App extends React.Component {
       this.handleChange(2);
       this.setState({color: grey[900]});
     } //projects page
-    else {
+    else if(spot > (homeHeight + aboutHeight + workHeight) && spot <= (homeHeight + aboutHeight + workHeight + projectHeight)){
       this.handleChange(3);
+      this.setState({color: grey[800]});
+    }
+    else {
       this.setState({color: grey[800]});
     }
   }
