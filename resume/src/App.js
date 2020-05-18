@@ -18,7 +18,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 const theme = createMuiTheme({
     palette: {
       primary: {
-        main: "#FFFFFF"
+        main: grey[50]
       },
       secondary: {
         main: grey[800]
@@ -91,10 +91,10 @@ class App extends React.Component {
       //   scrollToComponent(this.Projects, { offset: 0, align: 'top'})
       //   this.setState({color: blueGrey[300]});
       //   break;
-      default:
-        scrollToComponent(this.Home, { offset: 0, align: 'top'})
-          this.setState({color: blueGrey[800]});
-          break;
+      // default:
+      //   scrollToComponent(this.Home, { offset: 0, align: 'top'})
+      //     this.setState({color: blueGrey[800]});
+      //     break;
     }
   }
 

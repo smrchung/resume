@@ -3,22 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import blueGrey from '@material-ui/core/colors/blueGrey';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import Particles from 'react-particles-js';
-
-
-const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: "#FFFFFF"
-      },
-    },
-    typography: {
-      fontFamily: [
-        'Muli',
-      ],
-    }
-  });
 
 const styles = theme => ({
   root: {
@@ -71,9 +57,9 @@ class Home extends React.Component {
                     }
                   }
               }} />
-          <MuiThemeProvider theme={theme}>
-            <Typography color={theme.primary} variant="h3" gutterBottom align='center'> Semira Chung </Typography>
-            <Typography color={theme.primary} variant="h5" gutterBottom align='center'> &#60; incoming software engineer &#47;&#62; </Typography>
+          <MuiThemeProvider theme={this.props.theme}>
+            <Typography color={"primary"} variant="display2" gutterBottom align='center'> Semira Chung </Typography>
+            <Typography color={"primary"} variant="title" gutterBottom align='center'> &#60; incoming software engineer &#47;&#62; </Typography>
           </MuiThemeProvider>
         </div>
       </div>
