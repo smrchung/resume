@@ -119,7 +119,7 @@ class Work extends React.Component {
               <h3 className="vertical-timeline-element-title">Systems Intern @ State Farm</h3>
               <h4 className="vertical-timeline-element-subtitle">Bloomington, IL</h4>
               <p>
-                Analyzed Windows PowerShell scrips which were used to access the servers of Microsoft SharePoint. Organized the scripts into a script repository created on SharePoint for easier and quicker future access. Utilized and 
+                Analyzed Windows PowerShell scripts which were used to access the servers of Microsoft SharePoint. Organized the scripts into a script repository created on SharePoint for easier and quicker future access. Utilized and 
                 added applications, as well as manipulated code of web parts of SharePoint sites in order to fix issues.
               </p>
             </VerticalTimelineElement>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import Button from '@material-ui/core/Button';
 import CodeIcon from '@material-ui/icons/Code';
@@ -16,9 +16,6 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
     backgroundColor: grey[800],
-  },
-  info: {
-    paddingTop: window.innerHeight / 2 - 100,
   },
   techTexts: {
     display: "inline-flex"
@@ -34,19 +31,13 @@ const styles = theme => ({
     fontSize: 12
   },
   button: {
-    fontFamily: "Roboto",
+    fontFamily: "Muli",
     fontSize: 12,
     fontWeight: "bold",
     paddingLeft: 5,
     paddingRight: 5,
     paddingTop: 1,
     paddingBottom: 1,
-  },
-  disclaimer: {
-    position: "absolute",
-    bottom: 0,
-    right: 0,
-    left: 0
   },
   disclaimerText: {
     fontSize: 14,
@@ -66,25 +57,25 @@ class Projects extends React.Component {
 
     return (
       <div className={classes.root}>
-        <br/><br/>
+        <br /><br /><br />
         <MuiThemeProvider theme={this.props.theme}>
           <Typography color={"primary"} variant="display2" gutterBottom> Projects </Typography>
         </MuiThemeProvider>
         <div className={classes.entities}>
-        <VerticalTimelineElement
+          <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="February - April 2020"
             iconStyle={{ background: 'rgb(245, 147, 0)', color: '#fff' }}
             icon={<CodeIcon />}
           >
             <div className={classes.techTexts} role="button">
-              <Typography variant="subheading" className={classes.techText} style={{width: 55}}> Thymeleaf </Typography>
+              <Typography variant="subheading" className={classes.techText}> Thymeleaf </Typography>
               &nbsp;
-              <Typography variant="subheading" className={classes.techText} style={{width: 35}}> Spring </Typography>
+              <Typography variant="subheading" className={classes.techText}> Spring </Typography>
               &nbsp;
-              <Typography variant="subheading" className={classes.techText} style={{width: 48}}> Hibernate </Typography>
+              <Typography variant="subheading" className={classes.techText}> Hibernate </Typography>
               &nbsp;
-              <Typography variant="subheading" className={classes.techText} style={{width: 34}}> MySQL </Typography>
+              <Typography variant="subheading" className={classes.techText}> MySQL </Typography>
             </div>
             <h3 className="vertical-timeline-element-title">Sparky's Bank: Secure Banking System</h3>
             <h4 className="vertical-timeline-element-subtitle">CSE 545 - Software Security</h4>
@@ -92,34 +83,34 @@ class Projects extends React.Component {
               A full-stack application that allows customers and merchants to create accounts and perform functionalities such as transfer funds via email/account number, request for new accounts, modify profile information, set up appointments with specialists, and more. There are several roles whose pages are only restricted
               to these roles (admins, tier 1, and tier 2 employees). Security designs were implemented such as SSL/TSL (HTTPs), PKI, OTP, and salted/hashed passwords in the encrypted form.
             </p>
-            <br/>
+            <br />
             <div>
-              <Button variant="outlined" className={classes.button} href="https://github.com/dayakulkarniasu/CSE545_Team7" target="_blank">
+              <Button variant="outlined" className={classes.button} href="https://github.com/dayakulkarniasu/CSE545_Team7" target="_blank" rel="noopener">
                 repo
               </Button>
             </div>
           </VerticalTimelineElement>
 
-        <VerticalTimelineElement
+          <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="October - November 2019"
             iconStyle={{ background: 'rgb(245, 147, 0)', color: '#fff' }}
             icon={<CodeIcon />}
           >
             <div className={classes.techTexts} role="button">
-              <Typography variant="subheading" className={classes.techText} style={{width: 60}}> Tensorflow </Typography>
+              <Typography variant="subheading" className={classes.techText}> Tensorflow </Typography>
               &nbsp;
-              <Typography variant="subheading" className={classes.techText} style={{width: 80}}> Android Studio </Typography>
+              <Typography variant="subheading" className={classes.techText}> Android Studio </Typography>
               &nbsp;
-              <Typography variant="subheading" className={classes.techText} style={{width: 25}}> Java </Typography>
+              <Typography variant="subheading" className={classes.techText}> Java </Typography>
             </div>
             <h3 className="vertical-timeline-element-title">EyeDentify: Assistive Object Detection Application</h3>
             <h4 className="vertical-timeline-element-subtitle">CSE 569 - Fundamentals of Statistical Learning</h4>
             <p>
-              An assistive mobile application that uses object detection to allow the visually impaired detect three main objects in their daily lives (humans, cars, chairs) using their mobile application camera in order to navigate through daily tasks with ease. 
+              An assistive mobile application that uses object detection to allow the visually impaired detect three main objects in their daily lives (humans, cars, chairs) using their mobile application camera in order to navigate through daily tasks with ease.
               The application notifies user of the relative position and estimated distance from the camera to the object as well as has audio capability.
             </p>
-            <br/>
+            <br />
             <div>
               <Button variant="outlined" className={classes.button} href="https://github.com/smrchung/CSE569-Project" target="_blank">
                 repo
@@ -144,7 +135,7 @@ class Projects extends React.Component {
             <p>
               Analyzed an Amazon Electronics Product Reviews data-set to create four different visualizations that helps convey the story of picturing customers' buying decisions.
             </p>
-            <br/>
+            <br />
             <div>
               <Button variant="outlined" className={classes.button} href="https://vinaymehta1860.github.io/amazon_product_review/" target="_blank">
                 web application
@@ -195,15 +186,15 @@ class Projects extends React.Component {
               Created an iOS application that allowed users to search up cuisines in a location by entering a city or zip-code as input. The user will be returned a list of restaurants that satisfy the specifications given. Required a user log-in so that each user can add restaurants to his/her favorites list where favorited restaurants will be saved.
             </p>
           </VerticalTimelineElement>
-      </div>
-      <br/>
-      <br/>
-      <br/>
-      <div className={classes.dislaimer}>
-        <MuiThemeProvider theme={this.props.theme}>
-          <Typography color={"primary"} variant="subheading" gutterBottom align='center' className={classes.disclaimerText}>2020 © DEVELOPED BY SEMIRA CHUNG WITH ♥ AND REACT &amp; MATERIAL-UI</Typography>
-        </MuiThemeProvider>
-      </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div className={classes.dislaimer}>
+          <MuiThemeProvider theme={this.props.theme}>
+            <Typography color={"primary"} variant="subheading" gutterBottom align='center' className={classes.disclaimerText}>2020 © DEVELOPED BY SEMIRA CHUNG WITH ♥ AND REACT &amp; MATERIAL-UI</Typography>
+          </MuiThemeProvider>
+        </div>
       </div>
     );
   }

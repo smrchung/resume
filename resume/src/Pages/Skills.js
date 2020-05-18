@@ -23,11 +23,11 @@ const styles = theme => ({
 let languages = ["Java", "JavaScript", "HTML/CSS", "SQL", "Python"];
 let lang_levels = [70, 85, 80, 60, 55, 60];
 let color = {
-    "bar": "black",
-    "title": {
-      "text": "#111",
-      "background": "#fff"
-    }
+  "bar": "black",
+  "title": {
+    "text": "#111",
+    "background": "#fff"
+  }
 };
 
 let frameworks = ["Node.js", "React.js", "Angular", "Spring"];
@@ -39,40 +39,40 @@ let software_levels = [75, 65, 70];
 class Skills extends React.Component {
   generateLangSkills = () => {
     let programming_skills = [];
-    for(let i = 0; i < languages.length; i++) {
-        let obj = {}; 
-        obj.type = languages[i];
-        obj.level = lang_levels[i];
-        obj.color = color;
-        programming_skills.push(obj);
+    for (let i = 0; i < languages.length; i++) {
+      let obj = {};
+      obj.type = languages[i];
+      obj.level = lang_levels[i];
+      obj.color = color;
+      programming_skills.push(obj);
     }
     return programming_skills;
   }
 
   generateFrameworkSkills = () => {
     let frameworks_array = [];
-    for(let i = 0; i < frameworks.length; i++) {
-        let obj = {}; 
-        obj.type = frameworks[i];
-        obj.level = framework_levels[i];
-        obj.color = color;
-        frameworks_array.push(obj);
+    for (let i = 0; i < frameworks.length; i++) {
+      let obj = {};
+      obj.type = frameworks[i];
+      obj.level = framework_levels[i];
+      obj.color = color;
+      frameworks_array.push(obj);
     }
     return frameworks_array;
   }
 
   generateSoftwareTools = () => {
     let software_tools = [];
-    for(let i = 0; i < softwares.length; i++) {
-        let obj = {}; 
-        obj.type = softwares[i];
-        obj.level = software_levels[i];
-        obj.color = color;
-        software_tools.push(obj);
+    for (let i = 0; i < softwares.length; i++) {
+      let obj = {};
+      obj.type = softwares[i];
+      obj.level = software_levels[i];
+      obj.color = color;
+      software_tools.push(obj);
     }
     return software_tools;
   }
-    
+
   PROGRAMMING_SKILLS = this.generateLangSkills();
   FRAMEWORKS = this.generateFrameworkSkills();
   SOFTWARES = this.generateSoftwareTools();
@@ -85,13 +85,13 @@ class Skills extends React.Component {
           <MuiThemeProvider theme={this.props.theme}>
             <Typography color={"black"} variant="display2" gutterBottom> Technical Skills </Typography>
             <Typography color={"black"} variant="title" gutterBottom> Programming/Scripting Languages </Typography>
-            <SkillBar skills={this.PROGRAMMING_SKILLS}/>
-            <br/>
+            <SkillBar skills={this.PROGRAMMING_SKILLS} />
+            <br />
             <Typography color={"black"} variant="title" gutterBottom> Frameworks </Typography>
-            <SkillBar skills={this.FRAMEWORKS}/>
-            <br/>
+            <SkillBar skills={this.FRAMEWORKS} />
+            <br />
             <Typography color={"black"} variant="title" gutterBottom> Databases </Typography>
-            <SkillBar skills={this.SOFTWARES}/>
+            <SkillBar skills={this.SOFTWARES} />
           </MuiThemeProvider>
         </div>
       </div>
