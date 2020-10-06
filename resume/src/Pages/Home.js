@@ -72,7 +72,7 @@ class Home extends React.Component {
               }} />
           <MuiThemeProvider theme={this.props.theme}>
             <Typography color={"primary"} variant="display2" gutterBottom align='center'> Semira Chung </Typography>
-            <Typography color={"primary"} variant="title" gutterBottom align='center'> &#60; incoming software engineer &#47;&#62; </Typography>
+            <Typography color={"primary"} variant="title" gutterBottom align='center'> &#60; software engineer &#47;&#62; </Typography>
             <br/><br/>
             <Typography color={"primary"} variant="title" gutterBottom align='center'> 
               <ColorButton variant="outlined" color="primary" className={classes.margin} href="https://drive.google.com/open?id=1WsR_oAgSxtMV16U_wS1eeeVJqmONvLXF" target="_blank" rel="noopener">

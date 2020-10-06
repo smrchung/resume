@@ -45,14 +45,25 @@ class Work extends React.Component {
           <VerticalTimeline>
           <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              date="Starting August 2020"
+              date="August 2020 - Present"
               iconStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
               icon={<WorkIcon />}
             >
+              <div className={classes.techTexts} role="button">
+                <Typography variant="subheading" className={classes.techText}> Java </Typography>
+                &nbsp;
+                <Typography variant="subheading" className={classes.techText}> Vert.x </Typography>
+                &nbsp;
+                <Typography variant="subheading" className={classes.techText}> Maven </Typography>
+                &nbsp;
+                <Typography variant="subheading" className={classes.techText}> Gradle </Typography>
+                &nbsp;
+                <Typography variant="subheading" className={classes.techText}> Couchbase DB </Typography>
+              </div>
               <h3 className="vertical-timeline-element-title">Software Engineer II @ American Express</h3>
               <h4 className="vertical-timeline-element-subtitle">Phoenix, AZ</h4>
               <p>
-                TBD
+                Part of the Network Modernization team working with the payment network and card transactions.
               </p>
             </VerticalTimelineElement>
 
